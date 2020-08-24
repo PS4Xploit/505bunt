@@ -1,0 +1,219 @@
+<!DOCTYPE html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>ESP8266 PS4 Exploit by Sandmann (GTA Mods)</title><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"><link rel="icon" type="image/x-icon" href="./favicon.ico">
+  <style type="text/css">
+@font-face {
+font-family: 'VT323';
+font-style: normal;
+font-weight: 400;
+}
+html {
+height:100%;
+}
+body {
+background-image: url("bg.png");
+background-repeat: no-repeat;
+background-size: cover;
+height:100%;
+background-color: #1451AE;
+color: #ffffff;
+text-shadow: 2px 1px #000000;
+)
+text-align: center; }
+h1 {
+font-family: 'VT323', monospace;
+font-size: 3rem; color: #4d4dff;
+margin:0px;
+}
+main {
+justify-content: space-around; -webkit-justify-content: space-around;
+}
+.optionsWrapper{
+display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+display: -ms-flexbox; /* TWEENER - IE 10 */
+display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+display: flex; /* NEW, Spec - Firefox, Chrome, Opera */
+flex-flow: row wrap;
+justify-content: space-around; -webkit-justify-content: space-around;
+}
+#exploits_505 {
+visibility:visible;
+}
+#infoWrapper{
+width:100%;
+display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+display: -ms-flexbox; /* TWEENER - IE 10 */
+display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+display: flex; /* NEW, Spec - Firefox, Chrome, Opera */
+justify-content: space-around; -webkit-justify-content: space-around;
+}
+.divExploitOption {
+margin: 1px;
+border-radius: 10px;
+border: 2px solid #000;
+width: 195px;
+}
+.divExploitInfo {
+margin: 10px;
+border-radius: 10px;
+border: 2px solid #000;
+width: 95%;
+}
+.divMenuHeader {
+font-family: 'VT323', monospace;
+font-size: 30px;
+padding: 0px;
+text-align: center;
+background: #000000; border-radius: 5px;
+border: 1px solid black;
+align:center; }
+#exploitInfo {
+font-family: 'VT323', monospace;
+font-size: 25px;
+text-align: left;
+margin: 20px;
+}
+.divMenuBody {
+margin: 10px;
+text-align: center; }
+.fw_ver {
+font-family: 'VT323', monospace;
+font-size: 30px;
+padding: 10px;
+text-decoration: none;
+color:#ffaaaa;
+}
+.fw_ver.selected {
+color:#ff0000;
+}
+.fw_ver:hover {
+color:#ff0000; }
+footer {
+font-family: 'VT323', monospace;
+font-size: 25px;
+text-align: center;
+}
+.svg { height: 150px;
+width: 120px; }
+.svg:hover { fill: #f00; }
+.nav { height: 100px;
+width: 100px; }
+.nav:hover { fill: #f00; }
+@media screen and (max-width: 1024px) {
+h1 {
+font-family: 'VT323', monospace;
+font-size: 2.5rem; color: #278DCD; }
+}
+@media screen and (max-width: 480px) {
+h1 {
+font-family: 'VT323', monospace;
+font-size: 2.5rem; color: #278DCD; }
+}
+  </style>
+  <script src="./zepto.min.js"></script>
+  <script>
+Zepto(function($){
+//convert svg images to inline
+$('img.svg').each(function(){
+var $img = $(this);
+var imgID = $img.attr('id');
+var imgClass = $img.attr('class');
+var imgURL = $img.attr('src');
+var imgOnMouseOver = $img.attr('onmouseover');
+var imgOnMouseOut = $img.attr('onmouseout');
+$.get(imgURL, function(data) {
+var $svg = $(data).find('svg');
+if(typeof imgID !== 'undefined') {
+$svg = $svg.attr('id', imgID);
+}
+if(typeof imgClass !== 'undefined') {
+$svg = $svg.attr('class', imgClass+' replaced-svg');
+}
+if(typeof imgOnMouseOver !== 'undefined') {
+$svg = $svg.attr('onmouseover', imgOnMouseOver+' replaced-svg');
+} if(typeof imgOnMouseOut !== 'undefined') {
+$svg = $svg.attr('onmouseout', imgOnMouseOut+' replaced-svg');
+} $svg = $svg.removeAttr('xmlns:a'); if(!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {
+$svg.attr('viewBox', '0 0 ' + $svg.attr('height') + ' ' + $svg.attr('width'))
+} $img.replaceWith($svg);
+}, 'xml');
+}); $('#fw_455').click(function() {
+$('#fw_455').addClass('selected');
+switchFW("455");
+}); });
+function switchFW(fw_ver) { switch(fw_ver) {
+case "505": break;
+}
+} var exploitInfo = {
+"david1337hax":"1. Dein GTA V Update sollte bei max. 1.05 liegen.<br>2. Starte zuerst den HEN Exploit und dann den GTA V MOD „David1337hax“!<br>3. Starte nun GTA V (Stell sicher, dass GTA nicht bereits ausgef&uuml;hrt wurde, sonst funktioniert es nicht!)<br>4. Der Cheat ist aktiviert. Du kannst das Cheat-Men&uuml; mit DPad &#x2192; & [] &ouml;ffnen.",
+"lamance":"1. Dein GTA V Update sollte bei max. 1.05 liegen.<br>2. Starte zuerst den HEN Exploit und dann den GTA V MOD „Lamance“!<br>3. Starte nun GTA V (Stell sicher, dass GTA nicht bereits ausgef&uuml;hrt wurde, sonst funktioniert es nicht!)<br>4. Der Cheat ist aktiviert. Du kannst das Cheat-Men&uuml; mit DPad &#x2192; & [] &ouml;ffnen.",
+"IntenseV2":"1. Dein GTA V Update sollte bei max. 1.05 liegen.<br>2. Starte zuerst den HEN Exploit und dann den GTA V MOD „IntenseV2“!<br>3. Starte nun GTA V (Stell sicher, dass GTA nicht bereits ausgef&uuml;hrt wurde, sonst funktioniert es nicht!)<br>4. Der Cheat ist aktiviert. Du kannst das Cheat-Men&uuml; mit R1 + [] &ouml;ffnen.",
+"WildeModz":"1. Dein GTA V Update sollte bei max. 1.05 liegen.<br>2. Starte zuerst den HEN Exploit und dann den GTA V MOD „WildeModz“!<br>3. Starte nun GTA V (Stell sicher, dass GTA nicht bereits ausgef&uuml;hrt wurde, sonst funktioniert es nicht!)<br>4. Der Cheat ist aktiviert. Du kannst das Cheat-Men&uuml; mit DPad &#x2190; + [] &ouml;ffnen.",
+"Psych0s":"1. Dein GTA V Update sollte bei max. 1.05 liegen.<br>2. Starte zuerst den HEN Exploit und dann den GTA V MOD „Psych0s“!<br>3. Starte nun GTA V (Stell sicher, dass GTA nicht bereits ausgef&uuml;hrt wurde, sonst funktioniert es nicht!)<br>4. Der Cheat ist aktiviert. Du kannst das Cheat-Men&uuml; mit DPad &#x2190; + [] &ouml;ffnen.",
+"AP II Intense v2":"1. Dein GTA V Update muß auf 1.27 sein.<br>2. Starte zuerst den HEN Exploit und dann den GTA V MOD „AP II Intense v2“!<br>3. Starte nun GTA V (Stell sicher, dass GTA nicht bereits ausgef&uuml;hrt wurde, sonst funktioniert es nicht!)<br>4. Der Cheat ist aktiviert. Du kannst das Cheat-Men&uuml; mit R1 + [] &ouml;ffnen.",
+"index":"Wenn ihr wieder zur&uuml;ck zur Startseite m&ouml;chtet, klickt einfach auf den sich drehen Pfeil und schwup seid ihr wieder am Start :)", };
+
+function showInfo(key) {
+document.getElementById("exploitInfo").innerHTML = exploitInfo[key];
+}
+function clearInfo() {
+document.getElementById("exploitInfo").innerHTML = "Bewege deine Maus &uuml;ber einen der hier gezeigten Exploits, um die Exploit-Informationen anzuzeigen.";
+}
+  </script>
+</head>
+<body>
+<header>
+</header>
+<h1 style="text-align: center;"><img style="border: 0px solid ; width: 595px; height: 124px;" src="logo.png" alt=""></h1>
+<div style="text-align: center;"></div>
+<div style="text-align: center;">
+<h1 style="color: rgb(255, 255, 255);"><small><small><small><small><small><small><span style="font-weight: bold;">Firmware 5.05/5.07 by Sandmann - thx c0d3m4st4 &copy;2018</span></small></small></small></small></small></small></h1>
+<br>
+</div>
+<div class="optionsWrapper" id="exploits_505">
+<div class="divExploitOption">
+<div class="divMenuHeader">David1337<br>1.05</div>
+<div class="divMenuBody"><a href="./david1337hax.html"><img onmouseover="showInfo('david1337hax')" onmouseout="clearInfo()" style="border: 0px solid ; width: 154px; height: 154px;" alt="" src="david1337hax.png"></a></div>
+</div>
+<div class="divExploitOption">
+<div class="divMenuHeader">Lamance<br>1.05</div>
+<div class="divMenuBody"><a href="./lamance.html"><img onmouseover="showInfo('lamance')" onmouseout="clearInfo()" style="border: 0px solid ; width: 154px; height: 154px;" alt="" src="lamance.png"></a></div>
+</div>
+<div class="divExploitOption">
+<div class="divMenuHeader">Psych0s<br>1.05</div>
+<div class="divMenuBody"><a href="./Psych0s.html"><img onmouseover="showInfo('Psych0s')" onmouseout="clearInfo()" style="border: 0px solid ; width: 154px; height: 154px;" alt="" src="psych0s.png"></a></div>
+</div>
+<div class="divExploitOption">
+<div class="divMenuHeader">WildeModz<br>1.05</div>
+<div class="divMenuBody"><a href="./WildeModz.html"><img onmouseover="showInfo('WildeModz')" onmouseout="clearInfo()" style="border: 0px solid ; width: 154px; height: 154px;" alt="" src="wildemodz.png"></a></div>
+</div>
+<div class="divExploitOption">
+<div class="divMenuHeader">IntenseV2<br>1.05</div>
+<div class="divMenuBody"><a href="./IntenseV2.html"><img onmouseover="showInfo('IntenseV2')" onmouseout="clearInfo()" style="border: 0px solid ; width: 154px; height: 154px;" alt="" src="IntenseV2.png"></a></div>
+</div>
+<div class="divExploitOption">
+<div class="divMenuHeader">AP2Intense<br>1.27</div>
+<div class="divMenuBody"><a href="./APIIINTENSE-v2-rock-menu.html"><img onmouseover="showInfo('AP II Intense v2')" onmouseout="clearInfo()" style="border: 0px solid ; width: 154px; height: 154px;" alt="" src="APIIINTENSE.png"></a></div>
+</div>
+<div id="infoWrapper">
+<div class="divExploitInfo">
+<div class="divMenuHeader">Exploit Beschreibung:</div>
+<div class="divMenuBody"></div>
+<div id="exploitInfo">Bewege deine Maus &uuml;ber
+einen der hier gezeigten Exploits, um die Exploit-Informationen
+anzuzeigen.</div>
+</div>
+</div>
+<div style="text-align: center;"><footer></footer><footer><small><span style="color: rgb(255, 0, 0);"></span></small><small><span style="font-weight: bold;"></span></small></footer><footer><small><br>
+</small></footer><footer>
+</footer>
+<table style="width: 24px; height: 7px; text-align: left; margin-left: auto; margin-right: auto;" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <td><a href="./index.html"><img onmouseover="showInfo('index')" onmouseout="clearInfo()" style="border: 0px solid ; width: 67px; height: 67px;" alt="" src="ic_action_turn_left.png"></a></td>
+    </tr>
+  </tbody>
+</table>
+<footer>
+</footer><br>
+</div>
+</body>
+</html>

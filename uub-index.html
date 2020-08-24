@@ -1,0 +1,203 @@
+<!DOCTYPE html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>ESP8266 PS4 Exploit by Sandmann (Blocker Seite)</title><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"><link rel="icon" type="image/x-icon" href="./favicon.ico">
+<style type="text/css">
+@font-face {
+font-family: 'VT323';
+font-style: normal;
+font-weight: 400;
+}
+html {
+height:100%;
+}
+body {
+background-image: url("bg.png");
+background-repeat: no-repeat;
+background-size: cover;
+height:100%;
+background-color: #1451AE;
+color: #ffffff;
+text-shadow: 2px 1px #000000;
+)
+text-align: center; }
+h1 {
+font-family: 'VT323', monospace;
+font-size: 3rem; color: #4d4dff;
+margin:0px;
+}
+main {
+justify-content: space-around; -webkit-justify-content: space-around;
+}
+.optionsWrapper{
+display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+display: -ms-flexbox; /* TWEENER - IE 10 */
+display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+display: flex; /* NEW, Spec - Firefox, Chrome, Opera */
+flex-flow: row wrap;
+justify-content: space-around; -webkit-justify-content: space-around;
+}
+#exploits_505 {
+visibility:visible;
+}
+#infoWrapper{
+width:100%;
+display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+display: -ms-flexbox; /* TWEENER - IE 10 */
+display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+display: flex; /* NEW, Spec - Firefox, Chrome, Opera */
+justify-content: space-around; -webkit-justify-content: space-around;
+}
+.divExploitOption {
+margin: 1px;
+border-radius: 10px;
+border: 2px solid #000;
+width: 195px;
+}
+.divExploitInfo {
+margin: 10px;
+border-radius: 10px;
+border: 2px solid #000;
+width: 95%;
+}
+.divMenuHeader {
+font-family: 'VT323', monospace;
+font-size: 30px;
+padding: 0px;
+text-align: center;
+background: #000000; border-radius: 5px;
+border: 1px solid black;
+align:center; }
+#exploitInfo {
+font-family: 'VT323', monospace;
+font-size: 25px;
+text-align: left;
+margin: 20px;
+}
+.divMenuBody {
+margin: 10px;
+text-align: center; }
+.fw_ver {
+font-family: 'VT323', monospace;
+font-size: 30px;
+padding: 10px;
+text-decoration: none;
+color:#ffaaaa;
+}
+.fw_ver.selected {
+color:#ff0000;
+}
+.fw_ver:hover {
+color:#ff0000; }
+footer {
+font-family: 'VT323', monospace;
+font-size: 25px;
+text-align: center;
+}
+.svg { height: 150px;
+width: 120px; }
+.svg:hover { fill: #f00; }
+.nav { height: 100px;
+width: 100px; }
+.nav:hover { fill: #f00; }
+@media screen and (max-width: 1024px) {
+h1 {
+font-family: 'VT323', monospace;
+font-size: 2.5rem; color: #278DCD; }
+}
+@media screen and (max-width: 480px) {
+h1 {
+font-family: 'VT323', monospace;
+font-size: 2.5rem; color: #278DCD; }
+}
+  </style>
+  <script src="./zepto.min.js"></script>
+  <script>
+Zepto(function($){
+//convert svg images to inline
+$('img.svg').each(function(){
+var $img = $(this);
+var imgID = $img.attr('id');
+var imgClass = $img.attr('class');
+var imgURL = $img.attr('src');
+var imgOnMouseOver = $img.attr('onmouseover');
+var imgOnMouseOut = $img.attr('onmouseout');
+$.get(imgURL, function(data) {
+var $svg = $(data).find('svg');
+if(typeof imgID !== 'undefined') {
+$svg = $svg.attr('id', imgID);
+}
+if(typeof imgClass !== 'undefined') {
+$svg = $svg.attr('class', imgClass+' replaced-svg');
+}
+if(typeof imgOnMouseOver !== 'undefined') {
+$svg = $svg.attr('onmouseover', imgOnMouseOver+' replaced-svg');
+} if(typeof imgOnMouseOut !== 'undefined') {
+$svg = $svg.attr('onmouseout', imgOnMouseOut+' replaced-svg');
+} $svg = $svg.removeAttr('xmlns:a'); if(!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {
+$svg.attr('viewBox', '0 0 ' + $svg.attr('height') + ' ' + $svg.attr('width'))
+} $img.replaceWith($svg);
+}, 'xml');
+}); $('#fw_455').click(function() {
+$('#fw_455').addClass('selected');
+switchFW("455");
+}); });
+function switchFW(fw_ver) { switch(fw_ver) {
+case "505": break;
+}
+} var exploitInfo = {
+"JA":"Der Update Blocker wird dauerhaft deaktiviert und du kannst wieder Original Updates &uuml;ber das Internet, die Spiel-CD oder den USB Stick installieren.",
+"NEIN":"Der Update Blocker soll weiterhin aktiv bleiben!",
+"index":"Wenn ihr wieder zur&uuml;ck zur Startseite m&ouml;chtet, klickt einfach auf den sich drehen Pfeil.", };
+
+function showInfo(key) {
+document.getElementById("exploitInfo").innerHTML = exploitInfo[key];
+}
+function clearInfo() {
+document.getElementById("exploitInfo").innerHTML = "Bewege deine Maus &uuml;ber einen der hier gezeigten Exploits, um die Exploit-Informationen anzuzeigen.";
+}
+  </script>
+</head>
+<body>
+<header>
+</header>
+<h1 style="text-align: center;"><img style="border: 0px solid ; width: 595px; height: 124px;" src="logo.png" alt=""></h1>
+<div style="text-align: center;"></div>
+<div style="text-align: center;">
+<h1 style="color: rgb(255, 255, 255);"><small><small><small><small><small><small><span style="font-weight: bold;">Firmware 5.05/5.07 by Sandmann - thx c0d3m4st4 &copy;2018</span></small></small></small></small></small></small></h1>
+<br>
+</div>
+<div class="optionsWrapper" id="exploits_505">
+<div class="divExploitOption">
+<div class="divMenuHeader">JA</div>
+<div class="divMenuBody"><a href="./si-index.html"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve" class="svg replaced-svg" onmouseover="showInfo('JA'); replaced-svg" onmouseout="clearInfo(); replaced-svg">
+<g> <path d="M33.828v-20.271h58.714.354-1.949,4.354-4.354v-42.03c0-2.406-1.951-4.354-4.354-4.354h-58.715V292.54 c0-1.763-1.06-3.351-2.688-4.022c-1.627-0.674-3.5-0.301-4.745,0.942l-45.644,45.646c-0.817,0.818-1.274,1.927-1.274,3.08 c0,1.156,0.457,2.265,1.274,3.082l45.644,45.644c1.245,1.246,3.118,1.619,4.745,0.942 C335.26,387.178,336.319,385.592,336.319,383.828z"></path><path d="M437.611,251.031c-21.055-23.39-49.625-38.345-80.609-42.233c-1.065-2.063-2.75-5.075-3.217-5.886l-1.243-2.21 c4.803-7.346,7.231-14.976,7.231-22.706v-45.049c0-6.655-1.842-13.343-5.433-19.794l-0.382-0.74 c1.378-3.479,2.051-6.759,2.051-9.989c0-18.264-17.518-33.649-50.654-44.494c-28.225-9.236-66.5-14.534-105.018-14.534 c-38.524,0-76.809,5.298-105.029,14.535c-33.14,10.847-50.654,26.235-50.654,44.506c0,3.216,0.672,6.492,2.051,9.977l-0.355,0.665 c-3.613,6.55-5.444,13.235-5.444,19.869v45.049c0,7.769,2.43,15.387,7.229,22.672l-1.27,2.218 c-3.955,6.864-5.961,13.865-5.961,20.808v45.057c0,7.564,2.306,15.01,6.858,22.146l-0.897,1.557 c-3.955,6.863-5.961,13.855-5.961,20.777v45.086c0,20.595,16.714,39.564,47.063,53.419c29.609,13.517,69.519,20.959,112.37,20.959 c15.734,0,31.619-1.099,47.242-3.267c24.756,25.273,57.755,39.174,93.096,39.174c71.914,0,130.42-58.504,130.42-130.418 C471.096,305.969,459.204,275.016,437.611,251.031z M101.745,79.48c25.964-8.614,60.979-13.358,98.594-13.358 c37.6,0,72.61,4.747,98.589,13.366c23.715,7.869,34.328,17.197,34.328,22.95c0,5.772-10.613,15.123-34.33,22.998 c-25.966,8.622-60.978,13.37-98.587,13.37c-37.618,0-72.634-4.748-98.593-13.37c-23.706-7.873-34.315-17.225-34.315-22.998 C67.43,96.678,78.039,87.345,101.745,79.48z M63.664,146.543c25.852,17.886,78.278,29.229,136.675,29.229 c58.354,0,110.794-11.347,136.696-29.238v31.482c0,11.605-13.886,24.415-37.146,34.264c-26.483,11.216-61.838,17.394-99.552,17.394 c-37.71,0-73.061-6.178-99.54-17.393c-23.253-9.849-37.135-22.658-37.135-34.265L63.664,146.543L63.664,146.543z M200.338,409.913 c-37.7,0-73.053-6.174-99.541-17.386c-23.252-9.84-37.134-22.631-37.134-34.211v-35.94c27.988,21.765,79.421,35.091,136.675,35.091 c3.862,0,7.634-0.185,11.293-0.383c2.663,18.215,9.263,35.825,19.231,51.372C220.714,409.424,210.471,409.913,200.338,409.913z M211.538,319.954c-3.623,0.218-7.355,0.421-11.2,0.421c-37.705,0-73.057-6.175-99.54-17.389 c-23.252-9.846-37.135-22.645-37.135-34.236v-35.963c27.93,21.775,79.359,35.111,136.675,35.111 c10.018,0,20.409-0.534,31.598-1.627C221.23,282.42,214.234,300.811,211.538,319.954z M340.676,436.741 c-54.343,0-98.554-44.213-98.554-98.556c0-54.342,44.211-98.552,98.554-98.552c54.346,0,98.557,44.21,98.557,98.552 C439.232,392.528,395.021,436.741,340.676,436.741z"></path></g></svg></a></div>
+</div>
+<div class="divExploitOption">
+<div class="divMenuHeader">NEIN</div>
+<div class="divMenuBody"><a href="./index.html"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewbox="0 0 512 512" style="" xml:space="preserve" class="svg replaced-svg" onmouseover="showInfo('NEIN'); replaced-svg" onmouseout="clearInfo(); replaced-svg">
+<g> <path d="M33.828v-20.271h58.714.354-1.949,4.354-4.354v-42.03c0-2.406-1.951-4.354-4.354-4.354h-58.715V292.54 c0-1.763-1.06-3.351-2.688-4.022c-1.627-0.674-3.5-0.301-4.745,0.942l-45.644,45.646c-0.817,0.818-1.274,1.927-1.274,3.08 c0,1.156,0.457,2.265,1.274,3.082l45.644,45.644c1.245,1.246,3.118,1.619,4.745,0.942 C335.26,387.178,336.319,385.592,336.319,383.828z"></path><path d="M437.611,251.031c-21.055-23.39-49.625-38.345-80.609-42.233c-1.065-2.063-2.75-5.075-3.217-5.886l-1.243-2.21 c4.803-7.346,7.231-14.976,7.231-22.706v-45.049c0-6.655-1.842-13.343-5.433-19.794l-0.382-0.74 c1.378-3.479,2.051-6.759,2.051-9.989c0-18.264-17.518-33.649-50.654-44.494c-28.225-9.236-66.5-14.534-105.018-14.534 c-38.524,0-76.809,5.298-105.029,14.535c-33.14,10.847-50.654,26.235-50.654,44.506c0,3.216,0.672,6.492,2.051,9.977l-0.355,0.665 c-3.613,6.55-5.444,13.235-5.444,19.869v45.049c0,7.769,2.43,15.387,7.229,22.672l-1.27,2.218 c-3.955,6.864-5.961,13.865-5.961,20.808v45.057c0,7.564,2.306,15.01,6.858,22.146l-0.897,1.557 c-3.955,6.863-5.961,13.855-5.961,20.777v45.086c0,20.595,16.714,39.564,47.063,53.419c29.609,13.517,69.519,20.959,112.37,20.959 c15.734,0,31.619-1.099,47.242-3.267c24.756,25.273,57.755,39.174,93.096,39.174c71.914,0,130.42-58.504,130.42-130.418 C471.096,305.969,459.204,275.016,437.611,251.031z M101.745,79.48c25.964-8.614,60.979-13.358,98.594-13.358 c37.6,0,72.61,4.747,98.589,13.366c23.715,7.869,34.328,17.197,34.328,22.95c0,5.772-10.613,15.123-34.33,22.998 c-25.966,8.622-60.978,13.37-98.587,13.37c-37.618,0-72.634-4.748-98.593-13.37c-23.706-7.873-34.315-17.225-34.315-22.998 C67.43,96.678,78.039,87.345,101.745,79.48z M63.664,146.543c25.852,17.886,78.278,29.229,136.675,29.229 c58.354,0,110.794-11.347,136.696-29.238v31.482c0,11.605-13.886,24.415-37.146,34.264c-26.483,11.216-61.838,17.394-99.552,17.394 c-37.71,0-73.061-6.178-99.54-17.393c-23.253-9.849-37.135-22.658-37.135-34.265L63.664,146.543L63.664,146.543z M200.338,409.913 c-37.7,0-73.053-6.174-99.541-17.386c-23.252-9.84-37.134-22.631-37.134-34.211v-35.94c27.988,21.765,79.421,35.091,136.675,35.091 c3.862,0,7.634-0.185,11.293-0.383c2.663,18.215,9.263,35.825,19.231,51.372C220.714,409.424,210.471,409.913,200.338,409.913z M211.538,319.954c-3.623,0.218-7.355,0.421-11.2,0.421c-37.705,0-73.057-6.175-99.54-17.389 c-23.252-9.846-37.135-22.645-37.135-34.236v-35.963c27.93,21.775,79.359,35.111,136.675,35.111 c10.018,0,20.409-0.534,31.598-1.627C221.23,282.42,214.234,300.811,211.538,319.954z M340.676,436.741 c-54.343,0-98.554-44.213-98.554-98.556c0-54.342,44.211-98.552,98.554-98.552c54.346,0,98.557,44.21,98.557,98.552 C439.232,392.528,395.021,436.741,340.676,436.741z"></path></g></svg></a></div>
+</div>
+</div>
+<div id="infoWrapper">
+<div class="divExploitInfo">
+<div class="divMenuHeader">Exploit Beschreibung:</div>
+<div class="divMenuBody"></div>
+<div id="exploitInfo">Bewege deine Maus &uuml;ber
+einen der hier gezeigten Exploits, um die Exploit-Informationen
+anzuzeigen.</div>
+</div>
+</div>
+<div style="text-align: center;"><footer></footer><footer><small><span style="color: rgb(255, 0, 0);"></span></small><small><span style="font-weight: bold;"></span></small></footer><footer><small><br>
+</small></footer><footer>
+</footer>
+<table style="width: 24px; height: 7px; text-align: left; margin-left: auto; margin-right: auto;" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <td> <a href="./index.html"><img src="ic_action_turn_left.png" alt="" style="border: 0px solid ; width: 64px; height: 64px;" onmouseout="clearInfo()" onmouseover="showInfo('index')"></a></td>
+    </tr>
+
+  </tbody>
+</table>
+<footer>
+</footer><br>
+</div>
+</body>
+</html>
